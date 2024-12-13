@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar-dark .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.nav-link {
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: #00d4ff;
+}
+.navbar-brand img {
+    border-radius: 50%;
+    border: 2px solid #00d4ff;
+}
+
+/* Hero Section */
+.hero-section {
+    color: rgb(139, 65, 65);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    background-color: black; /* Fondo negro para transición de imágenes */
+    position: relative;
+}
+.hero-section .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.hero-section .carousel-image.active {
+    opacity: 1;
+}
+.hero-section .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para resaltar texto */
+    text-align: center;
+}
+.hero-section .text-container {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para texto */
+    padding: 20px;
+    border-radius: 10px;
+}
+.hero-section .btn {
+    background-color: #00d4ff;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.hero-section .btn:hover {
+    background-color: #0077aa;
+    transform: scale(1.1);
+}
+
+/* Mini Carrusel */
+#mini-carousel {
+    overflow: hidden;
+    background-color: #36587a;
+    padding: 1rem 0;
+    position: relative;
+}
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    animation: scroll-circular 15s linear infinite;
+    width: calc(200%); /* Duplicación para ciclo continuo */
+}
+.carousel-track img {
+    height: 80px;
+    margin: 0 10px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+@keyframes scroll-circular {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Proyectos Section */
+#proyectos {
+    background-image: url('imagenes/imagen8.jpg'); /* Fondo de la sección */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 4rem 0;
+}
+#proyectos .card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+#proyectos .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(3, 3, 3, 0.925);
+}
+#proyectos h2 {
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+#proyectos .card-title {
+    color: #333;
+    font-weight: bold;
+}
+#proyectos .card-text {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+#contacto {
+    background-color: #b8a9a9;
+}
+#contactForm .btn {
+    background-color: #00d4ff;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#contactForm .btn:hover {
+    background-color: #0077aa;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    #proyectos {
+        background-attachment: scroll;
+    }
+}
